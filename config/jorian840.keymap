@@ -83,10 +83,10 @@
 
         tilling_layer {
             bindings = <
-&none  &none      &kp N1  &kp N2  &kp N3  &kp N4     &kp RIGHT      &kp LEFT        &none      &none  &kp P            &none  &none  &none
-       &none      &kp A   &kp S   &kp D   &kp F      &kp G          &mt LC(LEFT) H  &kp J      &kp K  &mt LC(RIGHT) L  &none  &none
-       &kp LSHFT  &kp Z   &none   &none   &none      &kt T          &kp N           &kp M      &none  &none            &none  &none
-                                  &none   &kp SPACE  &kp RET        &kp RET         &kp SPACE  &none
+&none  &none      &mt LC(NUMBER_1) LS(LA(LC(NUMBER_1)))  &mt LC(NUMBER_2) LA(LS(LC(NUMBER_2)))  &mt LC(NUMBER_3) LS(LA(LC(NUMBER_3)))  &mt LC(NUMBER_4) LS(LA(LC(NUMBER_4)))  &kp LS(LA(LC(RIGHT)))      &kp LS(LA(LC(LEFT)))    &none              &none          &kp LS(LA(P))            &none  &none  &none
+       &none      &kp LA(LS(A))                          &kp LS(LA(S))                          &kp LA(LS(D))                          &kp LS(LA(F))                          &kp LS(LA(G))              &mt LC(LEFT) LS(LA(H))  &kp LS(LA(J))      &kp LA(LS(K))  &mt LC(RIGHT) LS(LA(L))  &none  &none
+       &kp LCTRL  &kp LS(LA(Z))                          &none                                  &none                                  &none                                  &kt LS(LA(T))              &kp LS(LA(N))           &kp LS(LA(M))      &none          &none                    &none  &none
+                                                                                                &none                                  &kp LS(LA(SPACE))                      &kp LS(LA(RET))            &kp LS(LA(RET))         &kp LS(LA(SPACE))  &none
             >;
 
             label = "Tilling";
