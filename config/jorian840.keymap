@@ -17,6 +17,7 @@
 #define ADJ 4
 
 &lt { quick-tap-ms = <200>; };
+
 &mt { quick-tap-ms = <200>; };
 
 / {
@@ -28,7 +29,8 @@
                 <&macro_tap>,
                 <&kp GREATER_THAN>,
                 <&macro_press>,
-                <&kp GREATER_THAN &kp SLASH>;
+                <&kp FSLH &kp GT>,
+                <&macro_release>;
 
             label = "/>";
         };
