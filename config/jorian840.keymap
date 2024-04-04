@@ -43,9 +43,9 @@
         lower_layer {
             label = "SYM";
             bindings = <
-&trans  &kp UNDER  &kp F1    &kp F2  &kp F3     &kp F4    &kp F5         &kp F6     &kp F7    &kp F8     &kp F9    &kp F10   &kp F11          &mt RGUI F12
+&trans  &kp UNDER  &kp N1    &kp N2  &kp N3     &kp N4    &kp N5         &kp N6     &kp N7    &kp N8     &kp N9    &kp N0    &trans           &mt RGUI F12
         &trans     &kp EXCL  &kp AT  &kp HASH   &kp DLLR  &kp PRCNT      &kp CARET  &kp AMPS  &kp STAR   &kp LPAR  &kp RPAR  &mt RCTRL MINUS
-        &trans     &kp N1    &kp N2  &kp N3     &kp N4    &kp N5         &kp N6     &kp N7    &kp N8     &kp N9    &kp N0    &trans
+        &kp F1     &kp F2    &kp F3  &kp F4     &kp F5    &kp F6         &kp F7     &kp F8    &kp F9     &kp F10   &kp F11   &kp F12
                                      &lt 4 TAB  &trans    &trans         &trans     &trans    &lt 4 DEL
             >;
         };
@@ -62,10 +62,10 @@
 
         code_layer {
             bindings = <
-&trans  &trans      &none   &kp PLUS        &kp DOLLAR  &kp LEFT_BRACE        &kp RIGHT_BRACE            &kp DOUBLE_QUOTES  &kp EQUAL      &kp EXCLAMATION  &kp PLUS   &kp NON_US_BACKSLASH  &caps_word  &kp BACKSPACE
-        &lt 5 LALT  &none   &kp MINUS       &kp SQT     &kp LEFT_PARENTHESIS  &kp RIGHT_PARENTHESIS      &kp GREATER_THAN   &kp LESS_THAN  &kp UNDERSCORE   &kp MINUS  &kp SEMICOLON         &lt 5 SQT
-        &trans      &trans  &kp UNDERSCORE  &kp GRAVE   &kp LEFT_BRACKET      &kp RIGHT_BRACKET          &kp AT_SIGN        &kp SEMI       &kp COMMA        &kp DOT    &kp SLASH             &none
-                                            &trans      &trans                &trans                     &trans             &trans         &trans
+&trans  &trans      &kp ASTERISK  &kp PLUS        &kp DOLLAR  &kp LEFT_BRACE        &kp RIGHT_BRACE            &kp DOUBLE_QUOTES  &kp EQUAL      &kp EXCLAMATION  &kp PLUS   &kp PIPE       &caps_word     &kp BACKSPACE
+        &lt 5 LALT  &kp LCTRL     &kp MINUS       &kp SQT     &kp LEFT_PARENTHESIS  &kp RIGHT_PARENTHESIS      &kp GREATER_THAN   &kp LESS_THAN  &kp UNDERSCORE   &kp MINUS  &kp SEMICOLON  &lt 5 SQT
+        &trans      &trans        &kp UNDERSCORE  &kp GRAVE   &kp LEFT_BRACKET      &kp RIGHT_BRACKET          &kp AT_SIGN        &kp COLON      &kp COMMA        &kp DOT    &kp SLASH      &kp BACKSLASH
+                                                  &trans      &trans                &trans                     &trans             &trans         &trans
             >;
 
             label = "CODE";
