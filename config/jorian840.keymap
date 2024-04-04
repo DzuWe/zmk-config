@@ -62,10 +62,10 @@
 
         code_layer {
             bindings = <
-&trans  &trans  &none   &kp PLUS        &kp DOLLAR  &kp LEFT_BRACE        &kp RIGHT_BRACE            &kp DOUBLE_QUOTES  &kp EQUAL      &kp EXCLAMATION  &kp PLUS   &kp NON_US_BACKSLASH  &caps_word  &kp BACKSPACE
-        &trans  &none   &kp MINUS       &kp SQT     &kp LEFT_PARENTHESIS  &kp RIGHT_PARENTHESIS      &kp GREATER_THAN   &kp LESS_THAN  &kp UNDERSCORE   &kp MINUS  &kp SEMICOLON         &lt 5 SQT
-        &trans  &trans  &kp UNDERSCORE  &kp GRAVE   &kp LEFT_BRACKET      &kp RIGHT_BRACKET          &kp AT_SIGN        &kp SEMI       &kp COMMA        &kp DOT    &kp SLASH             &none
-                                        &trans      &trans                &trans                     &trans             &trans         &trans
+&trans  &trans      &none   &kp PLUS        &kp DOLLAR  &kp LEFT_BRACE        &kp RIGHT_BRACE            &kp DOUBLE_QUOTES  &kp EQUAL      &kp EXCLAMATION  &kp PLUS   &kp NON_US_BACKSLASH  &caps_word  &kp BACKSPACE
+        &lt 5 LALT  &none   &kp MINUS       &kp SQT     &kp LEFT_PARENTHESIS  &kp RIGHT_PARENTHESIS      &kp GREATER_THAN   &kp LESS_THAN  &kp UNDERSCORE   &kp MINUS  &kp SEMICOLON         &lt 5 SQT
+        &trans      &trans  &kp UNDERSCORE  &kp GRAVE   &kp LEFT_BRACKET      &kp RIGHT_BRACKET          &kp AT_SIGN        &kp SEMI       &kp COMMA        &kp DOT    &kp SLASH             &none
+                                            &trans      &trans                &trans                     &trans             &trans         &trans
             >;
 
             label = "CODE";
