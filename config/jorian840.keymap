@@ -8,6 +8,7 @@
 #include <dt-bindings/zmk/bt.h>
 #include <dt-bindings/zmk/ext_power.h>
 #include <dt-bindings/zmk/keys.h>
+#include <dt-bindings/zmk/keys.h>
 #include <dt-bindings/zmk/outputs.h>
 
 #define DEF 0
@@ -22,6 +23,8 @@
 
 &caps_word {
 };
+
+&sl { release-after-ms = <2000>; };
 
 / {
     keymap {
@@ -60,7 +63,7 @@
         code_layer {
             bindings = <
 &trans  &trans  &none   &kp PLUS        &kp DOLLAR  &kp LEFT_BRACE        &kp RIGHT_BRACE            &kp DOUBLE_QUOTES  &kp EQUAL      &kp EXCLAMATION  &kp PLUS   &kp NON_US_BACKSLASH  &caps_word  &kp BACKSPACE
-        &trans  &none   &kp MINUS       &kp SQT     &kp LEFT_PARENTHESIS  &kp RIGHT_PARENTHESIS      &kp GREATER_THAN   &kp LESS_THAN  &kp UNDERSCORE   &kp MINUS  &kp SEMICOLON         &none
+        &trans  &none   &kp MINUS       &kp SQT     &kp LEFT_PARENTHESIS  &kp RIGHT_PARENTHESIS      &kp GREATER_THAN   &kp LESS_THAN  &kp UNDERSCORE   &kp MINUS  &kp SEMICOLON         &lt 5 SQT
         &trans  &trans  &kp UNDERSCORE  &kp GRAVE   &kp LEFT_BRACKET      &kp RIGHT_BRACKET          &kp AT_SIGN        &kp SEMI       &kp COMMA        &kp DOT    &kp SLASH             &none
                                         &trans      &trans                &trans                     &trans             &trans         &trans
             >;
@@ -76,6 +79,17 @@
             &out OUT_TOG  &trans        &ext_power EP_TOG  &none         &none         &none             &none         &none         &none         &ext_power EP_TOG  &tog 0        &out OUT_TOG
                                                            &trans        &none         &trans            &trans        &none         &trans
             >;
+        };
+
+        tilling_layer {
+            bindings = <
+&none  &none      &kp N1  &kp N2  &kp N3  &kp N4     &kp RIGHT      &kp LEFT        &none      &none  &kp P            &none  &none  &none
+       &none      &kp A   &kp S   &kp D   &kp F      &kp G          &mt LC(LEFT) H  &kp J      &kp K  &mt LC(RIGHT) L  &none  &none
+       &kp LSHFT  &kp Z   &none   &none   &none      &kt T          &kp N           &kp M      &none  &none            &none  &none
+                                  &none   &kp SPACE  &kp RET        &kp RET         &kp SPACE  &none
+            >;
+
+            label = "Tilling";
         };
     };
 };
