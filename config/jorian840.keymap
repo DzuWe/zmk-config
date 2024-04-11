@@ -35,6 +35,11 @@
             timeout-ms = <50>;
             layers = <0>;
         };
+
+        Space {
+            bindings = <&kp SPACE>;
+            key-positions = <21 22 23>;
+        };
     };
 
     keymap {
@@ -46,27 +51,27 @@
 &kp LEFT_WIN  &mt LEFT_WIN RIGHT_BRACE  &kp Q  &kp W  &kp E      &kp R                 &kp T          &kp Y         &kp U                      &kp I            &kp O    &kp P     &kp LBKT        &mt RWIN RBKT
               &mt LEFT_ALT GRAVE        &kp A  &kp S  &kp D      &kp F                 &kp G          &kp H         &kp J                      &kp K            &kp L    &kp SEMI  &mt RALT SQT
               &mt LEFT_CONTROL MINUS    &kp Z  &kp X  &kp C      &kp V                 &kp B          &kp N         &kp M                      &kp COMMA        &kp DOT  &kp FSLH  &mt RCTRL BSLH
-                                                      &lt 2 TAB  &mt LEFT_SHIFT SPACE  &lt 1 RET      &lt 1 ESCAPE  &mt RIGHT_SHIFT BACKSPACE  &lt 2 BACKSPACE
+                                                      &lt 1 TAB  &mt LEFT_SHIFT SPACE  &lt 2 RET      &lt 1 ESCAPE  &mt RIGHT_SHIFT BACKSPACE  &lt 2 BACKSPACE
             >;
         };
 
         lower_layer {
             label = "SYM";
             bindings = <
-&trans  &kp UNDER  &kp N1    &kp N2  &kp N3     &kp N4    &kp N5         &kp NUMBER_6  &kp N7    &kp N8     &kp N9    &kp N0    &kp MINUS        &kp EQUAL
-        &trans     &kp EXCL  &kp AT  &kp HASH   &kp DLLR  &kp PRCNT      &kp CARET     &kp AMPS  &kp STAR   &kp LPAR  &kp RPAR  &mt RCTRL MINUS
-        &kp F1     &kp F2    &kp F3  &kp F4     &kp F5    &kp F6         &kp F7        &kp F8    &kp F9     &kp F10   &kp F11   &kp F12
-                                     &lt 3 TAB  &trans    &trans         &trans        &trans    &lt 3 DEL
+&trans  &kp UNDER  &kp N1    &kp N2  &kp N3    &kp N4    &kp N5         &kp NUMBER_6  &kp N7    &kp N8     &kp N9    &kp N0    &kp MINUS        &kp EQUAL
+        &trans     &kp EXCL  &kp AT  &kp HASH  &kp DLLR  &kp PRCNT      &kp CARET     &kp AMPS  &kp STAR   &kp LPAR  &kp RPAR  &mt RCTRL MINUS
+        &kp F1     &kp F2    &kp F3  &kp F4    &kp F5    &kp F6         &kp F7        &kp F8    &kp F9     &kp F10   &kp F11   &kp F12
+                                     &trans    &trans    &lt 3 TAB      &trans        &trans    &lt 3 DEL
             >;
         };
 
         raise_layer {
             label = "NUM";
             bindings = <
-&trans  &trans  &trans  &kp N1  &kp N2  &kp N3  &trans         &kp C_VOL_UP  &kp HOME        &kp K_PLAY_PAUSE  &kp PG_UP  &kp DELETE       &kp CAPS         &trans
-        &trans  &trans  &kp N4  &kp N5  &kp N6  &trans         &kp LEFT      &kp DOWN_ARROW  &kp UP            &kp RIGHT  &kp INS          &mt RCTRL K_APP
-        &trans  &trans  &kp N7  &kp N8  &kp N9  &kp N0         &kp C_VOL_DN  &kp END         &kp K_MUTE        &kp PG_DN  &kp PAUSE_BREAK  &trans
-                                &trans  &trans  &lt 3 RET      &lt 3 ESC     &trans          &trans
+&trans  &trans  &trans  &kp N1  &kp N2     &kp N3  &trans      &kp C_VOL_UP  &kp HOME        &kp K_PLAY_PAUSE  &kp PG_UP  &kp DELETE       &kp CAPS         &trans
+        &trans  &trans  &kp N4  &kp N5     &kp N6  &trans      &kp LEFT      &kp DOWN_ARROW  &kp UP            &kp RIGHT  &kp INS          &mt RCTRL K_APP
+        &trans  &trans  &kp N7  &kp N8     &kp N9  &kp N0      &kp C_VOL_DN  &kp END         &kp K_MUTE        &kp PG_DN  &kp PAUSE_BREAK  &trans
+                                &lt 3 TAB  &trans  &trans      &lt 3 ESC     &trans          &trans
             >;
         };
 
