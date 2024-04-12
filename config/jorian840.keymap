@@ -25,9 +25,6 @@
 &caps_word {
 };
 
-&sl {
-};
-
 / {
     combos {
         compatible = "zmk,combos";
@@ -37,12 +34,6 @@
             key-positions = <21 22>;
             timeout-ms = <50>;
             layers = <0>;
-        };
-
-        kbrd_sys {
-            bindings = <&sl 6>;
-            key-positions = <41 42 43>;
-            layers = <6>;
         };
     };
 
@@ -105,10 +96,10 @@
 
         Functions {
             bindings = <
-&trans  &trans  &kp F12  &kp F7  &kp F8      &kp F9  &kp PRINTSCREEN      &trans  &trans  &trans  &trans  &trans  &trans  &trans
-        &trans  &kp F11  &kp F4  &kp F5      &kp F6  &kp SCROLLLOCK       &trans  &trans  &trans  &trans  &trans  &trans
-        &trans  &kp F10  &kp F1  &kp F2      &kp F3  &kp PAUSE_BREAK      &trans  &trans  &trans  &trans  &trans  &trans
-                                 &kp K_MENU  &trans  &trans               &trans  &trans  &trans
+&trans  &trans  &kp F12  &kp F7  &kp F8      &kp F9  &kp PRINTSCREEN      &trans  &trans           &trans  &trans  &trans  &trans  &trans
+        &trans  &kp F11  &kp F4  &kp F5      &kp F6  &kp SCROLLLOCK       &trans  &trans           &trans  &trans  &trans  &trans
+        &trans  &kp F10  &kp F1  &kp F2      &kp F3  &kp PAUSE_BREAK      &trans  &trans           &trans  &trans  &trans  &trans
+                                 &kp K_MENU  &trans  &trans               &trans  &lt 6 BACKSPACE  &trans
             >;
 
             label = "Fun";
