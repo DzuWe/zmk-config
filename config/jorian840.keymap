@@ -8,7 +8,6 @@
 #include <dt-bindings/zmk/bt.h>
 #include <dt-bindings/zmk/ext_power.h>
 #include <dt-bindings/zmk/keys.h>
-#include <dt-bindings/zmk/outputs.h>
 
 #define DEF 0
 #define LWR 1
@@ -23,7 +22,8 @@
 &caps_word {
 };
 
-&sl { release-after-ms = <2000>; };
+&sl {
+};
 
 / {
     combos {
@@ -36,9 +36,10 @@
             layers = <0>;
         };
 
-        Space {
-            bindings = <&kp SPACE>;
-            key-positions = <21 22 23>;
+        kbrd_sys {
+            bindings = <&sl 6>;
+            key-positions = <41 42 43>;
+            layers = <6>;
         };
     };
 
@@ -48,41 +49,77 @@
         default_layer {
             label = "MAIN";
             bindings = <
-&kp LEFT_WIN  &mt LEFT_WIN RIGHT_BRACE  &kp Q  &kp W  &kp E      &kp R                 &kp T          &kp Y         &kp U                      &kp I            &kp O    &kp P     &kp LBKT        &mt RWIN RBKT
-              &mt LEFT_ALT GRAVE        &kp A  &kp S  &kp D      &kp F                 &kp G          &kp H         &kp J                      &kp K            &kp L    &kp SEMI  &mt RALT SQT
-              &mt LEFT_CONTROL MINUS    &kp Z  &kp X  &kp C      &kp V                 &kp B          &kp N         &kp M                      &kp COMMA        &kp DOT  &kp FSLH  &mt RCTRL BSLH
-                                                      &lt 1 TAB  &mt LEFT_SHIFT SPACE  &lt 2 RET      &lt 1 ESCAPE  &mt RIGHT_SHIFT BACKSPACE  &lt 2 BACKSPACE
+&kp TILDE  &kp GRAVE  &kp Q           &kp W           &kp E         &kp R             &kp T        &kp Y        &kp U              &kp I         &kp O            &kp P               &kp LBKT              &kp RIGHT_BRACKET
+           &kp EQUAL  &mt LEFT_GUI A  &mt LEFT_ALT S  &mt LCTRL D   &mt LEFT_SHIFT F  &kp G        &kp H        &mt RIGHT_SHIFT J  &mt RCTRL K   &mt RIGHT_ALT L  &mt RGUI SEMICOLON  &kp SQT
+           &kp MINUS  &kp Z           &kp X           &kp C         &kp V             &kp B        &kp N        &kp M              &kp COMMA     &kp DOT          &kp FSLH            &kp NON_US_BACKSLASH
+                                                      &lt 3 ESCAPE  &lt 1 SPACE       &kp TAB      &lt 2 ENTER  &lt 4 BACKSPACE    &lt 5 DELETE
             >;
         };
 
-        lower_layer {
-            label = "SYM";
+        Navigation {
             bindings = <
-&trans  &kp UNDER  &kp N1    &kp N2  &kp N3    &kp N4    &kp N5         &kp NUMBER_6  &kp N7    &kp N8     &kp N9    &kp N0    &kp MINUS        &kp EQUAL
-        &trans     &kp EXCL  &kp AT  &kp HASH  &kp DLLR  &kp PRCNT      &kp CARET     &kp AMPS  &kp STAR   &kp LPAR  &kp RPAR  &mt RCTRL MINUS
-        &kp F1     &kp F2    &kp F3  &kp F4    &kp F5    &kp F6         &kp F7        &kp F8    &kp F9     &kp F10   &kp F11   &kp F12
-                                     &trans    &trans    &lt 3 TAB      &trans        &trans    &lt 3 DEL
+&trans  &trans  &trans  &trans  &trans  &trans  &trans      &trans      &trans    &trans         &trans       &trans     &trans  &trans
+        &trans  &trans  &trans  &trans  &trans  &trans      &caps_word  &kp LEFT  &kp DOWN       &kp UP       &kp RIGHT  &trans
+        &trans  &trans  &trans  &trans  &trans  &trans      &kp INSERT  &kp HOME  &kp PAGE_DOWN  &kp PAGE_UP  &kp END    &trans
+                                &trans  &trans  &trans      &trans      &trans    &trans
             >;
+
+            label = "Nav";
         };
 
-        raise_layer {
-            label = "NUM";
+        Symbols {
             bindings = <
-&trans  &trans  &trans  &kp N1  &kp N2     &kp N3  &trans      &kp C_VOL_UP  &kp HOME        &kp K_PLAY_PAUSE  &kp PG_UP  &kp DELETE       &kp CAPS         &trans
-        &trans  &trans  &kp N4  &kp N5     &kp N6  &trans      &kp LEFT      &kp DOWN_ARROW  &kp UP            &kp RIGHT  &kp INS          &mt RCTRL K_APP
-        &trans  &trans  &kp N7  &kp N8     &kp N9  &kp N0      &kp C_VOL_DN  &kp END         &kp K_MUTE        &kp PG_DN  &kp PAUSE_BREAK  &trans
-                                &lt 3 TAB  &trans  &trans      &lt 3 ESC     &trans          &trans
+&trans  &trans  &kp LEFT_BRACE  &kp AMPS         &kp ASTERISK          &kp LEFT_PARENTHESIS   &kp RIGHT_BRACE      &trans  &trans  &trans  &trans  &trans  &trans  &trans
+        &trans  &kp COLON       &kp DOLLAR       &kp PERCENT           &kp CARET              &kp PLUS             &trans  &trans  &trans  &trans  &trans  &trans
+        &trans  &kp TILDE       &kp EXCLAMATION  &kp AT_SIGN           &kp HASH               &kp PIPE             &trans  &trans  &trans  &trans  &trans  &trans
+                                                 &kp LEFT_PARENTHESIS  &kp RIGHT_PARENTHESIS  &kp UNDERSCORE       &trans  &trans  &trans
             >;
+
+            label = "Sym";
         };
 
-        adjust_layer {
-            label = "ADJ";
+        Media {
             bindings = <
-&sys_reset  &bootloader   &none         &none              &none         &none         &none             &none         &none         &none         &none              &none         &bootloader   &sys_reset
-            &bt BT_CLR    &bt BT_SEL 0  &bt BT_SEL 1       &bt BT_SEL 2  &bt BT_SEL 3  &bt BT_SEL 4      &bt BT_SEL 4  &bt BT_SEL 3  &bt BT_SEL 2  &bt BT_SEL 1       &bt BT_SEL 0  &bt BT_CLR
-            &out OUT_TOG  &trans        &ext_power EP_TOG  &none         &none         &none             &none         &none         &none         &ext_power EP_TOG  &tog 0        &out OUT_TOG
-                                                           &trans        &none         &trans            &trans        &none         &trans
+&trans  &trans  &trans  &trans  &trans  &trans  &trans      &trans      &trans            &trans             &trans           &trans      &trans  &trans
+        &trans  &trans  &trans  &trans  &trans  &trans      &trans      &kp K_PREVIOUS    &kp K_VOLUME_DOWN  &kp K_VOLUME_UP  &kp K_NEXT  &trans
+        &trans  &trans  &trans  &trans  &trans  &trans      &trans      &trans            &trans             &trans           &trans      &trans
+                                &trans  &trans  &trans      &kp K_STOP  &kp K_PLAY_PAUSE  &kp K_MUTE
             >;
+
+            label = "Med";
+        };
+
+        Numbers {
+            bindings = <
+&trans  &trans  &kp LBKT   &kp N7  &kp N8   &kp N9  &kp RBKT       &trans  &trans  &trans  &trans  &trans  &trans  &trans
+        &trans  &kp SEMI   &kp N4  &kp N5   &kp N6  &kp EQUAL      &trans  &trans  &trans  &trans  &trans  &trans
+        &trans  &kp GRAVE  &kp N1  &kp N2   &kp N3  &kp BSLH       &trans  &trans  &trans  &trans  &trans  &trans
+                                   &kp DOT  &kp N0  &kp MINUS      &trans  &trans  &trans
+            >;
+
+            label = "Num";
+        };
+
+        Functions {
+            bindings = <
+&trans  &trans  &kp F12  &kp F7  &kp F8      &kp F9  &kp PRINTSCREEN      &trans  &trans  &trans  &trans  &trans  &trans  &trans
+        &trans  &kp F11  &kp F4  &kp F5      &kp F6  &kp SCROLLLOCK       &trans  &trans  &trans  &trans  &trans  &trans
+        &trans  &kp F10  &kp F1  &kp F2      &kp F3  &kp PAUSE_BREAK      &trans  &trans  &trans  &trans  &trans  &trans
+                                 &kp K_MENU  &trans  &trans               &trans  &trans  &trans
+            >;
+
+            label = "Fun";
+        };
+
+        System {
+            bindings = <
+&trans  &trans            &trans        &trans        &trans        &trans        &trans                 &sys_reset  &trans  &trans  &trans  &trans  &trans       &bt BT_CLR_ALL
+        &bt BT_CLR        &bt BT_SEL 0  &bt BT_SEL 1  &bt BT_SEL 2  &bt BT_SEL 3  &bt BT_SEL 4           &trans      &trans  &trans  &trans  &trans  &trans
+        &ext_power EP_ON  &trans        &trans        &trans        &trans        &ext_power EP_OFF      &trans      &trans  &trans  &trans  &trans  &bootloader
+                                                      &trans        &trans        &trans                 &trans      &trans  &trans
+            >;
+
+            label = "Sys";
         };
     };
 };
