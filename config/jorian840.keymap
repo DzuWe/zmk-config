@@ -17,7 +17,10 @@
 
 &lt { quick-tap-ms = <200>; };
 
-&mt { quick-tap-ms = <200>; };
+&mt {
+    quick-tap-ms = <200>;
+    flavor = "balanced";
+};
 
 &caps_word {
 };
@@ -80,10 +83,10 @@
 
         Media {
             bindings = <
-&trans  &trans  &trans  &trans  &trans  &trans  &trans      &trans      &trans            &trans             &trans           &trans      &trans  &trans
-        &trans  &trans  &trans  &trans  &trans  &trans      &trans      &kp K_PREVIOUS    &kp K_VOLUME_DOWN  &kp K_VOLUME_UP  &kp K_NEXT  &trans
-        &trans  &trans  &trans  &trans  &trans  &trans      &trans      &trans            &trans             &trans           &trans      &trans
-                                &trans  &trans  &trans      &kp K_STOP  &kp K_PLAY_PAUSE  &kp K_MUTE
+&trans  &trans  &trans  &trans  &trans  &trans  &trans      &trans      &trans      &trans             &trans           &trans      &trans  &trans
+        &trans  &trans  &trans  &trans  &trans  &trans      &trans      &kp C_PREV  &kp K_VOLUME_DOWN  &kp K_VOLUME_UP  &kp C_NEXT  &trans
+        &trans  &trans  &trans  &trans  &trans  &trans      &trans      &trans      &trans             &trans           &trans      &trans
+                                &trans  &trans  &trans      &kp C_STOP  &kp C_PP    &kp K_MUTE
             >;
 
             label = "Med";
