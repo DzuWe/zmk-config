@@ -88,14 +88,14 @@
         TmuxResizeLeft: TmuxResizeLeft {
             compatible = "zmk,behavior-macro";
             #binding-cells = <0>;
-            bindings = <&kp LC(B) &kp LC(LEFT_ARROW)>;
+            bindings = <&kp LC(B) &kp LS(H)>;
             label = "TMUXRESIZELEFT";
         };
 
         TmuxResizeRight: TmuxResizeRight {
             compatible = "zmk,behavior-macro";
             #binding-cells = <0>;
-            bindings = <&kp LC(B) &kp LC(RIGHT_ARROW)>;
+            bindings = <&kp LC(B) &kp LS(L)>;
             label = "TMUXRESIZERIGHT";
         };
 
@@ -130,15 +130,29 @@
         TmuxResizeUp: TmuxResizeUp {
             compatible = "zmk,behavior-macro";
             #binding-cells = <0>;
-            bindings = <&kp LC(B) &kp LC(UP_ARROW)>;
+            bindings = <&kp LC(B) &kp LS(K)>;
             label = "TMUXRESIZEUP";
         };
 
         TmuxResizeDown: TmuxResizeDown {
             compatible = "zmk,behavior-macro";
             #binding-cells = <0>;
-            bindings = <&kp LC(B) &kp LC(DOWN_ARROW)>;
+            bindings = <&kp LC(B) &kp LC(J)>;
             label = "TMUXRESIZEDOWN";
+        };
+
+        TmuxSplitH: TmuxSplitH {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            bindings = <&kp LC(B) &kp DOUBLE_QUOTES>;
+            label = "TMUXSPLITH";
+        };
+
+        TmuxSplitV: TmuxSplitV {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            bindings = <&kp LC(B) &kp PERCENT>;
+            label = "TMUXSPLITV";
         };
     };
 
@@ -223,10 +237,10 @@
 
         TMUX {
             bindings = <
-&none  &none  &TmuxBrowse    &none           &none            &none             &none      &none      &none              &none            &none          &TmuxPrevious     &none         &none
-       &none  &none          &none           &TmuxRotateLeft  &TmuxRotateRight  &none      &none      &TmuxResizeLeft    &TmuxResizeDown  &TmuxResizeUp  &TmuxResizeRight  &TmuxCommand
-       &none  &TmuxKillPane  &TmuxNewWindow  &none            &none             &none      &TmuxNext  &none              &none            &none          &none             &none
-                                             &none            &none             &none      &kp LC(B)  &TmuxToggleLayout  &none
+&none  &none  &TmuxBrowse    &none          &none            &none             &none      &none      &none              &none            &none          &TmuxPrevious     &none         &none
+       &none  &TmuxSplitH    &none          &TmuxRotateLeft  &TmuxRotateRight  &none      &none      &TmuxResizeLeft    &TmuxResizeDown  &TmuxResizeUp  &TmuxResizeRight  &TmuxCommand
+       &none  &TmuxPaneZoom  &TmuxKillPane  &TmuxNewWindow   &TmuxSplitV       &none      &TmuxNext  &none              &none            &none          &none             &none
+                                            &none            &none             &none      &kp LC(B)  &TmuxToggleLayout  &none
             >;
         };
     };
