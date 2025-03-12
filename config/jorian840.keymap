@@ -49,6 +49,97 @@
             bindings = <&kp LC(B) &kp C>;
             label = "SEQUENCE";
         };
+
+        TmuxNext: TmuxNext {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            bindings = <&kp LC(B) &kp N>;
+            label = "TMUXNEXT";
+        };
+
+        TmuxPrevious: TmuxPrevious {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            bindings = <&kp LC(B) &kp P>;
+            label = "TMUXPREVIOUS";
+        };
+
+        TmuxKillPane: TmuxKillPane {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            bindings = <&kp LC(B) &kp X>;
+            label = "TMUXKILLPANE";
+        };
+
+        TmuxBrowse: TmuxBrowse {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            bindings = <&kp LC(B) &kp W>;
+            label = "TMUXBROWSE";
+        };
+
+        TmuxPaneZoom: TmuxPaneZoom {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            bindings = <&kp LC(B) &kp Z>;
+            label = "TMUXPANEZOOM";
+        };
+
+        TmuxResizeLeft: TmuxResizeLeft {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            bindings = <&kp LC(B) &kp LC(LEFT_ARROW)>;
+            label = "TMUXRESIZELEFT";
+        };
+
+        TmuxResizeRight: TmuxResizeRight {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            bindings = <&kp LC(B) &kp LC(RIGHT_ARROW)>;
+            label = "TMUXRESIZERIGHT";
+        };
+
+        TmuxRotateRight: TmuxRotate {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            bindings = <&kp LC(B) &kp RIGHT_BRACE>;
+            label = "TMUXROTATE";
+        };
+
+        TmuxToggleLayout: TmuxToggleLayout {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            bindings = <&kp LC(B) &kp SPACE>;
+            label = "TMUXTOGGLELAYOUT";
+        };
+
+        TmuxCommand: TmuxCommand {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            bindings = <&kp LC(B) &kp COLON>;
+            label = "TMUXCOMMAND";
+        };
+
+        TmuxRotateLeft: TmuxRotateLeft {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            bindings = <&kp LC(B) &kp LEFT_BRACE>;
+            label = "TMUXROTATELEFT";
+        };
+
+        TmuxResizeUp: TmuxResizeUp {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            bindings = <&kp LC(B) &kp LC(UP_ARROW)>;
+            label = "TMUXRESIZEUP";
+        };
+
+        TmuxResizeDown: TmuxResizeDown {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            bindings = <&kp LC(B) &kp LC(DOWN_ARROW)>;
+            label = "TMUXRESIZEDOWN";
+        };
     };
 
     keymap {
@@ -132,10 +223,10 @@
 
         TMUX {
             bindings = <
-&trans  &trans  &trans  &trans  &trans          &trans  &trans      &trans  &trans  &trans  &trans  &trans  &trans  &trans
-        &trans  &trans  &trans  &trans          &trans  &trans      &trans  &trans  &trans  &trans  &trans  &trans
-        &trans  &trans  &trans  &TmuxNewWindow  &trans  &trans      &trans  &trans  &trans  &trans  &trans  &trans
-                                &trans          &trans  &trans      &trans  &trans  &trans
+&none  &none  &TmuxBrowse    &none           &none            &none             &none      &none      &none              &none            &none          &TmuxPrevious     &none         &none
+       &none  &none          &none           &TmuxRotateLeft  &TmuxRotateRight  &none      &none      &TmuxResizeLeft    &TmuxResizeDown  &TmuxResizeUp  &TmuxResizeRight  &TmuxCommand
+       &none  &TmuxKillPane  &TmuxNewWindow  &none            &none             &none      &TmuxNext  &none              &none            &none          &none             &none
+                                             &none            &none             &none      &kp LC(B)  &TmuxToggleLayout  &none
             >;
         };
     };
